@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSBC Signature Portal</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='images/favicon.ico')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/MSBC-theme.css')}}">
+</head>
+<body>
+    <div class="preview-body" class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="web-logo">
+                        <img src="{{url_for('static', filename='images/logo-dark.svg')}}" alt="">
+                    </div>
+                    <div class="web-title">
+                        MSBC SIGNATURE PORTAL<br>
+                        <h5 class="mt-2">Select The Signature</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row forms-list">
+                <div class="col-12 col-sm-6 col-md-4 new">
+                    <a class="img-link" target="_blank" href="{{ url_for('signature_link', page_name='Qtech') }}">
+                        <img src="{{url_for('static', filename='img/Qtech Logo.jpg')}}" alt="">
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 new">
+                    <a class="img-link" target="_blank" href="{{ url_for('signature_link', page_name='MSBC') }}">
+                        <img src="{{url_for('static',filename='img/MSBC Logo.jpg') }}" alt="">
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 new">
+                    <a class="img-link" target="_blank" href="{{ url_for('signature_link', page_name='Remoratech') }}">
+                        <img src="{{url_for('static', filename='img/Remora Tech Logo.jpg')}}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
+<script>
+    $.fn.shuffle = function() {
+
+    var allElems = this.get(),
+        getRandom = function(max) {
+            return Math.floor(Math.random() * max);
+        },
+        shuffled = $.map(allElems, function(){
+            var random = getRandom(allElems.length),
+                randEl = $(allElems[random]).clone(true)[0];
+            allElems.splice(random, 1);
+            return randEl;
+        });
+
+    this.each(function(i){
+        $(this).replaceWith($(shuffled[i]));
+    });
+
+    return $(shuffled);
+
+    };
+
+    $('.forms-list > div:not(.new)').shuffle();
+
+</script>
+</body>
+</html>

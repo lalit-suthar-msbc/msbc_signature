@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remoratech - Signature</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/MSBC-theme.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <div class="form-body">
+        <div class="website-logo">
+            <a href="MSBC Signature Portal.html">
+                <div class="logo2 website-logo-rt">
+                    <img class="logo-size" src="images/Remora-Tech-Logo-w.svg" alt="">
+                </div>
+            </a>
+        </div>
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder rt">
+                    <h2>Insights, Illuminate,<br><span>Innovation</span></h2>
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Signature Form<br></h3>
+                        <p>Fill the form to get your Signature Instantly</p>
+                        <form>
+                            <div class="form-row">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="First name">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Last name">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <input class="text" class="form-control" placeholder="Designation">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Email address">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col inline-el rad-with-details">
+                                    <input type="radio" id="rad1" name="rad" required checked><label for="rad1">UK Number</label>
+                                </div>
+                                <div class="col inline-el rad-with-details">
+                                    <input type="radio" id="rad2" name="rad" required><label for="rad2">India Number</label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <input type="checkbox" id="chk1" required unchecked onclick="toggleNumberInput(this)"><label for="chk1">Need Extension</label>
+                                </div>
+                                <div class="col" id="numberInput">
+                                    <input type="number" class="form-control" placeholder="Enter extension">
+                                </div>
+                            </div>
+                            <div class="form-button">
+                                <button id="submit" type="submit" class="ibtn ibtn-full extra-padding">Download</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript">
+    function toggleNumberInput(checkbox) {
+    var numberInput = document.getElementById('numberInput');
+    if (checkbox.checked) {
+        numberInput.style.display = 'block'; // Shows the input field when checked
+    } else {
+        numberInput.style.display = 'none'; // Hides the input field when unchecked
+    }
+}
+
+// Call the function on page load to set the initial visibility based on the checkbox state
+window.onload = function() {
+    toggleNumberInput(document.getElementById('chk1'));
+}
+
+</script>
+</body>
+</html>
